@@ -79,16 +79,7 @@ function updateSigninStatus() {
   setSigninStatus();
 }
 
-getToken();
-async function getToken(){
-  let url = 'https://oauth2.googleapis.com/token?client_id=565540057112-pa78e6vrkrvk1g0dalhicah20krcfup7.apps.googleusercontent.com&client_secret=0FzyRFwevARss443VrmkagoN&
-  code=&grant_type=authorization_code&
-  '
-let res1 = await fetch(url);
-  let res2 = await res1.json();
-  console.log(res2);
-  
-}
+
 
 getDetails();
 async function getDetails(){
