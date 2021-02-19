@@ -26,7 +26,7 @@ function initClient() {
       'scope': SCOPE
   }).then(function () {
     GoogleAuth = gapi.auth2.getAuthInstance();
-             console.log(GoogleAuth);
+             console.log(GoogleAuth.Jl.kd.DA.access_token);
     // Listen for sign-in state changes.
     GoogleAuth.isSignedIn.listen(updateSigninStatus);
 
