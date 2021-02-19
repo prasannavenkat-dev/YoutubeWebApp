@@ -27,7 +27,6 @@ function initClient() {
   }).then(function () {
     GoogleAuth = gapi.auth2.getAuthInstance();
       
-             console.log(GoogleAuth.Jl.kd);
     // Listen for sign-in state changes.
     GoogleAuth.isSignedIn.listen(updateSigninStatus);
 
@@ -62,6 +61,8 @@ function revokeAccess() {
 
 function setSigninStatus() {
   var user = GoogleAuth.currentUser.get();
+             console.log(GoogleAuth.Jl.kd);
+  
   var isAuthorized = user.hasGrantedScopes(SCOPE);
   if (isAuthorized) {
     $('#sign-in-or-out-button').html('Sign out');
