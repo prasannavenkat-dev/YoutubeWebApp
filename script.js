@@ -61,7 +61,7 @@ function revokeAccess() {
 
 function setSigninStatus() {
   var user = GoogleAuth.currentUser.get();
-             console.log(GoogleAuth.Jl.kd);
+             console.log(GoogleAuth);
   
   var isAuthorized = user.hasGrantedScopes(SCOPE);
   if (isAuthorized) {
