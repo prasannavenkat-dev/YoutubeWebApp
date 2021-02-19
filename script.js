@@ -81,7 +81,7 @@ function updateSigninStatus() {
 
 getDetails();
 async function getDetails(){
- let url = 'https://youtube.googleapis.com/youtube/v3/subscriptions?key=AIzaSyBeGyvz-cxF-FFCADJNNxcJozZd6361UqA&part=snippet&mine=true'
+ let url = 'https://youtube.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key=AIzaSyBeGyvz-cxF-FFCADJNNxcJozZd6361UqA'
  let getResults = await fetch(url);
   let res = await getResults.json();
   console.log(res);
