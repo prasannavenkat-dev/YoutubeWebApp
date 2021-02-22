@@ -81,13 +81,68 @@ function updateSigninStatus() {
 }
 
 
-
 getDetails();
+
 async function getDetails(){
  let url = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=guvi&key=AIzaSyBeGyvz-cxF-FFCADJNNxcJozZd6361UqA'
  let getResults = await fetch(url);
   let res = await getResults.json();
-  console.log(res);
+     
+    for(i=0;i<res.length;i++){
+  var container = document.createElement('div');
+  container.setAttribute('class','container-fluid');
+  document.body.append(container);
+  
+  
+          var card = document.createElement('div');
+          card.setAttribute('class','card');
+           container.append(card);
+               
+           var row = document.createElement('div');
+           row.setAttribute('class','row');
+            card.append(row);
+           
+            var imgSec = document.createElement('div');
+            imgSec.setAttribute('class','col-md-4');    
+             row.append(imgSec);
+                //img
+                 var img = document.createElement('img');
+                 img.setAttribute('src',res.items[i].snippet.thumbnails.default.url);
+                 imgSec.append(img);
+         
+             var details = document.createElement('div');
+             details.setAttribute('class','col-md-8');
+              row.append(details);
+  
+  
+              var cardBlock = document.createElement('div');
+              cardBlock.setAttribute('class','card-block');
+               details.append(cardBlock);
+                 
+                
+               //TITLE
+                   
+               var title = document.createElement('h4');
+               title.setAttribute('class','card-title');
+               title.innerHTML=res.items[i].snippet.title;
+               cardBlock.append(title);
+  
+                 //channel 
+                 var channelName = document.createElement('h6');
+                 channelName.setAttribute('class','card-title');
+                 channelName.innerHTML=res.items[i].snippet.channelTitle;
+                 cardBlock.append(channelName);
+                  
+                //description
+  
+                var description = document.createElement('p');
+                description.setAttribute('class','card-text');
+                description.innerHTML=res.items[i].snippet.description;
+                 cardBlock.append(description);
+  
+  
+}
+
 }
 
 
